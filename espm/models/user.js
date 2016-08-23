@@ -7,6 +7,7 @@ var UserSchema = new mongoose.Schema({
     email    : String,
     password : String
   },
+  role  : { type: String, default: 'basic' },    // 'boardMember', 'basic'
   todos : [Todo.schema]
 });
 

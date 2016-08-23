@@ -1,20 +1,31 @@
+<img src="/images/mainstrip.jpg" alt="Not displaying...">
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>TODOs
+        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>New Zealand Atlanta Association <% if (currentUser) { %><span> - Members Area</span><% } %>
       </a>
     </div>
 
-    <ul class="nav navbar-nav navbar-left">
-      <li><a href="/">Home</a></li>
-      <% if (currentUser) { %>
-        <li><a href="/todos">TODOs</a></li>
-      <% } %>
+  <ul class="nav navbar-nav navbar-left">
+   <li><a href="/">Home</a></li>
+   <% if (currentUser) { %>
+    <li><a href="/minutes">Minutes</a></li>
+    <% } %>
+
     </ul>
+
+
     <ul class="nav navbar-nav navbar-right">
       <% if (currentUser) { %>
-        <li><a href="#"><%= currentUser.local.email %></a></li>
+
+        <li><a href="#"><%= currentUser.local.email %>
+        <% if (currentUser.role === 'boardMember') { %>
+          <span>(BM)</span>
+        <% } %>
+        </a></li>
+
         <li><a href="/logout">Logout</a></li>
       <% } else { %>
         <li><a href="/login">Login</a></li>

@@ -2,8 +2,8 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 // Below added VV
-var passport = require('passport');
 var session = require('express-session');
+var passport = require('passport');
 var flash = require('connect-flash');
 // Above added ^^
 var logger = require('morgan');
@@ -17,23 +17,23 @@ var methodOverride = require('method-override');
 var homeRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var todosRouter = require('./routes/todos');
+var minutesRouter = require('./routes/minutes');
+
 
 var app = express();
 
+// Use Static Content
+app.use('/static', express.static('public/images/'));
+
 
 // Connect to database
-mongoose.connect('mongodb://localhost/todos');
+mongoose.connect('mongodb://localhost/espm');
+// mongoose.connect('mongodb://localhost/minutes');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-//Cust  This middleware will allow us to use the currentUser in our views and routes.
-app.use(function (req, res, next) {
-  global.currentUser = req.user;
-  next();
-});
-
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -55,9 +55,16 @@ app.use(flash());
 //Cust Config Passport w/ Custom data
 require('./config/passport/passport')(passport);
 
+//Cust  This middleware will allow us to use the currentUser in our views and routes.
+app.use(function (req, res, next) {
+  global.currentUser = req.user;
+  next();
+});
+
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/todos', todosRouter);
+app.use('/minutes', minutesRouter);
 
 
 // catch 404 and forward to error handler

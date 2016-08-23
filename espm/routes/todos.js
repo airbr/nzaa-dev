@@ -22,19 +22,10 @@ function authenticate(req, res, next) {
 
 // INDEX
 router.get('/', authenticate, function(req, res, next) {
-  var todos = global.currentUser.todo;
+  // var todos = global.currentUser.todos;
   res.render('todos/index', { todos: todos, message: req.flash() });
 });
 
-// router.get('/', authenticate, function(req, res, next) {
-//   // get all the todos and render the index view
-//   Todo.find({}).sort('-createdAt')
-//   .then(function(todos) {
-//     res.render('todos/index', { todos: todos } );
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
 
 // NEW
 router.get('/new', authenticate, function(req, res, next) {

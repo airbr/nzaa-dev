@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>Minutes from Meetings:</h3>
+      <div>
+      <% minutes.forEach(function(minutes) { %>
+        <dl class="dl-horizontal">
+          <dt>Date of</dt><dd><%= minutes.dateOf %></dd>
+          <dt>Type</dt><dd><%= minutes.type %></dd>
+          <dt>Approved</dt><dd><%= minutes.approved %></dd>
+          <dt>Headline</dt><dd><%= minutes.headline %></dd>
+        </dl>
+      <% }) %>
+      </div>
+    </div>
+
+<iframe id="iframepdf" src="images/Minutes-July2016.pdf" width="450" height="500"></iframe>
+
+<iframe id="iframepdf" src="images/Agenda-July2016.pdf" width="450" height="500"></iframe>
+    <!-- <img src="/images/Minutes-July2016.pdf" alt="Not displaying..."> -->
+
+
+
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

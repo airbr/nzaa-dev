@@ -7,6 +7,7 @@ var TodoSchema = new mongoose.Schema({
   { timestamps: true }  // createdAt, updatedAt
 );
 
+
 function date2String(date) {
   var options = {
     weekday: 'long', year: 'numeric', month: 'short',

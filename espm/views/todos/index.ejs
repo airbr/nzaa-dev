@@ -16,14 +16,7 @@
         <h4>
           <form method="POST" action="/todos/<%= todo._id %>?_method=DELETE">
             <a href="/todos/<%= todo._id %>">
-              <%= todo.title %>
-            </a>
-            <a href="/todos/<%= todo._id %>/toggle">
-              <% if (todo.completed) { %>
-                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-              <% } else { %>
-                <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-              <% } %>
+              <%= todo.title + ' - ' + todo.completed %>
             </a>
             <button type="submit" class="btn btn-xs btn-danger">Delete</button>
           </form>
