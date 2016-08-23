@@ -37,13 +37,16 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// //NEW
-// router.get('/new', function(req, res, next) {
-//   var minutes = {
+// Constitution SHOW
+router.get('/constitution', function(req, res, next) {
+    res.render('minutes/constitution');
+});
 
-//   }
-//   res.render('minutes/new');
-// });
+
+
+
+
+
 
 // NEW
 router.get('/new', authenticate, function(req, res, next) {

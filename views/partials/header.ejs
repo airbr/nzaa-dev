@@ -12,6 +12,7 @@
    <li><a href="/">Home</a></li>
    <% if (currentUser) { %>
     <li><a href="/minutes">Minutes</a></li>
+    <li><a href="/minutes/constitution">Constitution</a></li>
     <% } %>
 
     </ul>
@@ -52,9 +53,9 @@
 </nav>
 
 
-<div>
+<div class="well">
 <% if (currentUser) { %>
-    <li>User details:</li>
+    <h4>User details:</h4>
     <br>
     Current role: <%= currentUser.role %>
     <br>
