@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+
+<h1>New Minutes</h1>
+
+  <form method="post" action="/minutes">
+    <label for="dateOf"> Date of Meeting </label>
+    <input type="text" name="dateOf">
+    <br/>
+
+    <label for="type"> Type </label>
+    <input type="text" name="Type">
+    <br/>
+
+    <label for="approved"> Approved </label>
+    <input type="boolean" name="Approved">
+    <br/>
+
+    <label for="headline"> Headline </label>
+    <input type="text" name="Headline">
+    <br/>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
+

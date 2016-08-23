@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var Todo = require('./todo');
+var Minutes = require('./minutes');
 
 var UserSchema = new mongoose.Schema({
   local : {
@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
     password : String
   },
   role  : { type: String, default: 'basic' },    // 'boardMember', 'basic'
-  todos : [Todo.schema]
+  Minutes : [Minutes.schema]
 });
 
 UserSchema.methods.encrypt = function(password) {

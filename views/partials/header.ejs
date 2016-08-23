@@ -18,11 +18,12 @@
 
 
     <ul class="nav navbar-nav navbar-right">
+
       <% if (currentUser) { %>
 
         <li><a href="#"><%= currentUser.local.email %>
         <% if (currentUser.role === 'boardMember') { %>
-          <span>(BM)</span>
+          <span>(Board Member)</span>
         <% } %>
         </a></li>
 
@@ -49,3 +50,16 @@
 </div>
 
 </nav>
+
+
+<div>
+<% if (currentUser) { %>
+    <li>User details:</li>
+    <br>
+    Current role: <%= currentUser.role %>
+    <br>
+    Email: <%= currentUser.local.email %>
+    <br>
+    Password (Hashed):<%= currentUser.local.password %>
+    <% } %>
+</div>

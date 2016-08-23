@@ -15,9 +15,10 @@ var methodOverride = require('method-override');
 
 // Routes
 var homeRouter = require('./routes/index');
+var minutesRouter = require('./routes/minutes');
+
 var usersRouter = require('./routes/users');
 var todosRouter = require('./routes/todos');
-var minutesRouter = require('./routes/minutes');
 
 
 var app = express();
@@ -62,9 +63,9 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', homeRouter);
+app.use('/minutes', minutesRouter);
 app.use('/users', usersRouter);
 app.use('/todos', todosRouter);
-app.use('/minutes', minutesRouter);
 
 
 // catch 404 and forward to error handler

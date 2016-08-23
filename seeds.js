@@ -37,23 +37,17 @@ User.remove({})
 .then(function() {
   console.log('old minutes removed');
   console.log('creating some new minutes...');
-
+  // ß
   // dateOf:         { type: Date,  required: true },
   // type:           { type: String, required: true },
   // approved:     { type: Boolean, required: true },
   // headline:     { type: String, required: true}
 
+
   var minutes     = new Minutes({ dateOf: Date.now(),
                                   type: 'Regular Meeting',
                                   approved: true,
                                   headline: 'Best Meeting Ever' });
-
- // var Meeting = {
- //    dateOf: 2016-08-22,
- //    type: 'Board Meeting',
- //    approved: false,
- //    headline: 'This is the headline of the minutes'
- //  };
 
   return Minutes.create(minutes);
 })
@@ -69,6 +63,14 @@ User.remove({})
   quit();
 });
 
+
+
+ // var Meeting = {
+ //    dateOf: 2016-08-22,
+ //    type: 'Board Meeting',
+ //    approved: false,
+ //    headline: 'This is the headline of the minutes'
+ //  };
 
 
 // var mongoose = require('mongoose');
