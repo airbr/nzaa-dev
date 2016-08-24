@@ -12,6 +12,7 @@
 <div class="well">
 <% if (currentUser) { %>
     <h4>User details:</h4>
+    <h4>----</h4>
     <dt>Current role: </dt><dd><%= currentUser.role %></dd>
     <dt>Email: </dt><dd> <%= currentUser.local.email %></dd>
     <dt>Password (Hashed):</dt><dd><%= currentUser.local.password %></dd>

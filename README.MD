@@ -13,10 +13,12 @@ About:
 --
 This project intends to produce a MVP of a MEN Stack application performing CRUD operations on 2 associated models. It should use RESTful API practices.
 
-In practical terms, my app is called RONR an allusion to Roberts Newly Revised Rules of Order- but it is not related directly to the book or rules in anyway that would infringe intellectual property.
+This app is for a basic association that uses Roberts Rules of Order and needs to keep records minutes of meetings, with the requirement that all members be able the view the minutes.
 
-What it does is provides a simple website with a private login area for regular members and boardmembers who have different levels of privilege to read and edit minutes viewable within this login area.
+The web page allows users to sign up accounts and currently for testing purposes are automatically made board members (role: "boardMember").
 
+Board members are able to create new minutes which are viewable by all users. Newly created minutes contain a property of author with the currentUser._id.
+This allows for another user to login and see the user ID of who created minutes.
 
 
 Update: V1.1
