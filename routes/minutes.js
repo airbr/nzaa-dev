@@ -28,7 +28,7 @@ function authenticate(req, res, next) {
 
 // INDEX
 router.get('/', function(req, res, next) {
-  let minutes = [];
+  var minutes = [];
 
   console.log('minutes', minutes);
   Minutes.find(minutes)
