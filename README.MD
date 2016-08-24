@@ -7,7 +7,7 @@ Key links:
 
 [Trello](https://trello.com/b/VjQBkaa1/project-2-ronr)
 
-[Incomplete Project Deployed with Heroku at:](https://secure-waters-81035.herokuapp.com/)
+[Incomplete Project Deployed with Heroku](https://secure-waters-81035.herokuapp.com/)
 
 About:
 --
