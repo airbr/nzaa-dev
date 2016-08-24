@@ -1,4 +1,4 @@
-# Project2-RONR 
+# Project2-RONR
 ## README
 
 Key links:
@@ -7,7 +7,7 @@ Key links:
 
 [Trello](https://trello.com/b/VjQBkaa1/project-2-ronr)
 
-[Project Deployed at: TBD]( URL )
+[Incomplete Project Deployed with Heroku at:](https://secure-waters-81035.herokuapp.com/)
 
 About:
 --
@@ -15,7 +15,34 @@ This project intends to produce a MVP of a MEN Stack application performing CRUD
 
 In practical terms, my app is called RONR an allusion to Roberts Newly Revised Rules of Order- but it is not related directly to the book or rules in anyway that would infringe intellectual property.
 
-What it does is provides a simple website with a private login area for regular members and boardmembers who have different levels of privilege to read and edit minutes viewable within this login area. 
+What it does is provides a simple website with a private login area for regular members and boardmembers who have different levels of privilege to read and edit minutes viewable within this login area.
+
+
+
+Update: V1.1
+
+There are significant bugs encounted in the first version that has been deployed to Heroku, losing the ability to access boardMember functions. For testing, by default, new users will be administrator users.
+
+
+
+
+
+Technologies used:
+--
+Node.JS
+Mongo DB
+Express JS
+Mongoose
+Bootstrap
+CSS
+HTML 5
+Amazon Web Services
+
+Critical Node Modules including:
+--
+Passport
+
+
 
 References
 --

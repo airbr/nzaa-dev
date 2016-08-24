@@ -7,7 +7,7 @@ var UserSchema = new mongoose.Schema({
     email    : String,
     password : String
   },
-  role  : { type: String, default: 'Regular Member' }    // 'boardMember', 'basic'
+  role  : { type: String, default: 'boardMember' }    // 'boardMember', 'basic'
 });
 
 UserSchema.methods.encrypt = function(password) {
