@@ -13,19 +13,12 @@ About:
 --
 This project intends to produce a MVP of a MEN Stack application performing CRUD operations on 2 associated models. It should use RESTful API practices.
 
-This app is for a basic association with a constitution that uses Roberts Rules of Order and needs to keep records minutes of meetings with the requirement that all members be able the view the minutes.
+This app is for a basic association ("New Zealand American Association") with a constitution that uses Roberts Rules of Order and so needs to keep records minutes of meetings with the requirement that all members be able the view the minutes.
 
 The web page allows users to sign up accounts and currently for testing purposes are automatically made board members (role: "boardMember").
 
-Board members are able to create new minutes which are viewable by all users including regular users. Newly created minutes contain a property of author with the currentUser._id.
+Board members are able to create new minutes which are viewable by all users such as regular users. Newly created minutes contain a property of author with the currentUser._id.
 This allows for another user to login and see the user ID of who created minutes.
-
-
-Update: V1.1
-
-There are significant bugs encounted in the first version that has been deployed to Heroku, losing the ability to access boardMember functions. For testing, by default, new users will be administrator users.
-
-
 
 
 
