@@ -13,6 +13,7 @@
    <% if (currentUser) { %>
     <li><a href="/minutes">Minutes</a></li>
     <li><a href="/minutes/constitution">Constitution</a></li>
+
     <% } %>
 
     </ul>
@@ -52,15 +53,3 @@
 
 </nav>
 
-
-<div class="well">
-<% if (currentUser) { %>
-    <h4>User details:</h4>
-    <br>
-    Current role: <%= currentUser.role %>
-    <br>
-    Email: <%= currentUser.local.email %>
-    <br>
-    Password (Hashed):<%= currentUser.local.password %>
-    <% } %>
-</div>

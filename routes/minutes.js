@@ -43,11 +43,6 @@ router.get('/constitution', function(req, res, next) {
 });
 
 
-
-
-
-
-
 // NEW
 router.get('/new', authenticate, function(req, res, next) {
   var minutes = {
@@ -115,6 +110,19 @@ router.post('/', authenticate, function(req, res, next) {
 
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -9,6 +9,22 @@
     <% include ../partials/header %>
   </header>
 
+<div class="well">
+<% if (currentUser) { %>
+    <h4>User details:</h4>
+    <dt>Current role: </dt><dd><%= currentUser.role %></dd>
+    <dt>Email: </dt><dd> <%= currentUser.local.email %></dd>
+    <dt>Password (Hashed):</dt><dd><%= currentUser.local.password %></dd>
+    <dt>Your Author ID: </dt><dd> <%= currentUser._id %> </dd>
+    <% } %>
+    <br>
+    <dt> Admin Panel: </dt>
+    <% if (currentUser.role === 'boardMember') { %>
+    <dd><li><a href="/minutes/new"><span>New Minutes (Board Member)</span></a></li></dd>
+        <% } %>
+</div>
+
+
     <div>
       <h3>All Minutes:</h3>
       <div>
@@ -18,6 +34,7 @@
           <dt>Type</dt><dd><%= minute.type %></dd>
           <dt>Approved</dt><dd><%= minute.approved %></dd>
           <dt>Headline</dt><dd><%= minute.headline %></dd>
+          <dt>Author ID</dt><dd><%= minute.author %></dd>
         </dl>
       <% }) %>
       </div>

@@ -20,23 +20,41 @@ function handleError(err) {
 
 console.log('removing old minutes...');
 Minutes.remove({})
-.then(function() {
-  console.log('old minutes removed');
-  console.log('removing old users...');
-  return User.remove({})
-})
-.then(function() {
-  var joe = new User( {} );
-  joe.local = {
-    email : 'joe@hacker.com',
-    password : joe.encrypt('test1234')
-  };
-  joe.role = 'boardMember';
-  return User.create(joe);
-})
-.then(function(joe) {
-  console.log('Created user:', joe);
-  console.log('creating some new minutes...');
+// .then(function() {
+//   var admin = new User( {} );
+//   admin.local = {
+//     email : 'admin@admin.com',
+//     password : admin.encrypt('admin')
+//   };
+//   admin.role = 'boardMember';
+//   return User.create(admin);
+// });
+quit();
+
+
+
+
+
+
+
+
+// .then(function() {
+//   console.log('old minutes removed');
+//   console.log('removing old users...');
+//   return User.remove({})
+// })
+// .then(function() {
+//   var joe = new User( {} );
+//   joe.local = {
+//     email : 'joe@hacker.com',
+//     password : joe.encrypt('test1234')
+//   };
+//   joe.role = 'boardMember';
+//   return User.create(joe);
+// })
+// .then(function(joe) {
+//   console.log('Created user:', joe);
+//   console.log('creating some new minutes...');
   // ß
   // dateOf:         { type: Date,  required: true },
   // type:           { type: String, required: true },
@@ -44,25 +62,25 @@ Minutes.remove({})
   // headline:     { type: String, required: true}
 
 
-  var minutes     = new Minutes({ dateOf: Date.now(),
-                                  type: 'Regular Meeting',
-                                  approved: true,
-                                  headline: 'Best Meeting Ever',
-                                  author:  });
-
-  return Minutes.create(minutes);
-})
-.then(function(savedMinutes) {
-  console.log('Just saved', savedMinutes);
-  return Minutes.find({});
-})
-.then(function(allMinutes) {
-  console.log('Printing all minutes:');
-  allMinutes.forEach(function(minutes) {
-    console.log(minutes);
-  });
-  quit();
-});
+//   var minutes     = new Minutes({ dateOf: Date.now(),
+//                                   type: 'Regular Meeting',
+//                                   approved: true,
+//                                   headline: 'Best Meeting Ever',
+//                                   author: ' Author '
+//                                 });
+//   return Minutes.create(minutes);
+// })
+// .then(function(savedMinutes) {
+//   console.log('Just saved', savedMinutes);
+//   return Minutes.find({});
+// })
+// .then(function(allMinutes) {
+//   console.log('Printing all minutes:');
+//   allMinutes.forEach(function(minutes) {
+//     console.log(minutes);
+//   });
+//   quit();
+// });
 
 
 // currentUser.objectID
