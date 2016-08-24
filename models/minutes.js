@@ -4,7 +4,8 @@ var MinutesSchema = new mongoose.Schema({
   dateOf:         { type: Date,  required: true },
   type:           { type: String, required: true },
   approved:     { type: Boolean, required: true },
-  headline:     { type: String, required: true}
+  headline:     { type: String, required: true},
+  author:       { type: mongoose.Schema.Types.ObjectId, required: true }
   },
   { timestamps: true }  // createdAt, updatedAt
 );

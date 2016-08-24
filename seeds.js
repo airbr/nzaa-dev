@@ -18,8 +18,13 @@ function handleError(err) {
   return err;
 }
 
-console.log('removing old users...');
-User.remove({})
+console.log('removing old minutes...');
+Minutes.remove({})
+.then(function() {
+  console.log('old minutes removed');
+  console.log('removing old users...');
+  return User.remove({})
+})
 .then(function() {
   var joe = new User( {} );
   joe.local = {
@@ -31,11 +36,6 @@ User.remove({})
 })
 .then(function(joe) {
   console.log('Created user:', joe);
-  console.log('removing old minutes...');
-  return Minutes.remove({})
-})
-.then(function() {
-  console.log('old minutes removed');
   console.log('creating some new minutes...');
   // ß
   // dateOf:         { type: Date,  required: true },
@@ -47,7 +47,8 @@ User.remove({})
   var minutes     = new Minutes({ dateOf: Date.now(),
                                   type: 'Regular Meeting',
                                   approved: true,
-                                  headline: 'Best Meeting Ever' });
+                                  headline: 'Best Meeting Ever',
+                                  author:  });
 
   return Minutes.create(minutes);
 })
@@ -64,7 +65,7 @@ User.remove({})
 });
 
 
-
+// currentUser.objectID
  // var Meeting = {
  //    dateOf: 2016-08-22,
  //    type: 'Board Meeting',

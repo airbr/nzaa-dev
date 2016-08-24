@@ -80,17 +80,31 @@ router.get('/new', authenticate, function(req, res, next) {
 
 // CREATE
 router.post('/', authenticate, function(req, res, next) {
-console.log(req.body);
- var minutes = new Minutes ({
-    dateOf:       req.body.dateOf,
+  /*
+  { dateOf: 't4', Type: 't4', Approved: 't4', Headline: 't4' }
+  */
+
+  console.log('req.body:', req.body);
+  var minutes = new Minutes ({
+    dateOf:       new Date(),         // TODO: use a date from the form?
     type:         req.body.type,
     approved:     req.body.approved ? true : false,
-    headline:     req.body.headline
+    headline:     req.body.headline,
+    author:       currentUser._id
   });
   // Since a user's todos are an embedded document, we just need to push a new
   // TODO to the user's list of todos and save the user.
-  currentUser.minutes.push();
-  currentUser.save()
+  // { approved: false, _id: 57bca85a495ddcccf07ca9ce }
+  /*
+  dateOf:         { type: Date,  required: true },
+  type:           { type: String, required: true },
+  approved:     { type: Boolean, required: true },
+  headline:     { type: String, required: true}
+  */
+
+  console.log('trying to save minutes:', minutes);
+
+  Minutes.create(minutes)
   .then(function() {
     res.redirect('/minutes');
   }, function(err) {
