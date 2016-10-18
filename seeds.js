@@ -3,7 +3,7 @@ mongoose.Promise = require('bluebird');
 var User = require('./models/user');
 var Minutes = require('./models/minutes');
 
-mongoose.connect('mongodb://localhost/espm');
+mongoose.connect('mongodb://localhost/nzaa');
 
 // our script will not exit until we have disconnected from the db.
 function quit() {

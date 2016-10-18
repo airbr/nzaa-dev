@@ -10,3 +10,7 @@ a {
 .todo-form {
   max-width: 400px;
 }
+.headstrip {
+  width: 0 auto;
+  overflow: hidden;
+}
