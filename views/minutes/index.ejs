@@ -11,8 +11,8 @@
 
 <div class="dashboard">
   <div class="userinfo well">
-    <img src="images/crest.png" alt="NZ crest" id="crest">
     <% if (currentUser.role === 'basic') { %>
+        <img src="images/crest.png" alt="Not real NZ crest" id="crest">
         <h3>Your NZAA</h3>
         <dt>Your current status:</dt><dd>Dues-paying regular member. Kai Pai!</dd>
         <dt>Your email: </dt><dd> <%= currentUser.local.email %></dd>
@@ -28,9 +28,10 @@
         <% } %>
 
     <% if (currentUser.role === 'boardMember') { %>
+        <img src="images/realcrest.jpg" alt="Real NZ crest" id="crest">
         <h4>User details:</h4>
         <h4>----</h4>
-        <dt>Current role: </dt><dd>You are a Board Member! Tau Toko!</dd>
+        <dt>Current role: </dt><dd>You are a Board member! Tautoko!</dd>
         <dt>Email: </dt><dd> <%= currentUser.local.email %></dd>
         <dt>Password (Hashed):</dt><dd><%= currentUser.local.password %></dd>
         <dt>Your Author ID: </dt><dd> <%= currentUser._id %> </dd>
@@ -49,8 +50,8 @@
         </form> -->
   </div>
 
-  <!-- "Current Minutes bar" in row/wrap flexbox with user bar. Buggy! -->
-
+  <!-- "Current Minutes bar" in row/wrap flexbox with user bar. Buggy!!!! -->
+  <!-- Remember EJS stuff can't be commented out !-->
   <% include ../partials/freshminute %>
 
 

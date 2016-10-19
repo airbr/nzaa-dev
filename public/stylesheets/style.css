@@ -33,7 +33,7 @@ a {
 }
 .minutebox {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-direction: column-reverse;
 }
 .iframebox {
   display: flex;
