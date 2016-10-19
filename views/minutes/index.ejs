@@ -9,28 +9,58 @@
     <% include ../partials/header %>
   </header>
 
-<div class="well">
-<% if (currentUser) { %>
-    <h4>User details:</h4>
-    <h4>----</h4>
-    <dt>Current role: </dt><dd><%= currentUser.role %></dd>
-    <dt>Email: </dt><dd> <%= currentUser.local.email %></dd>
-    <dt>Password (Hashed):</dt><dd><%= currentUser.local.password %></dd>
-    <dt>Your Author ID: </dt><dd> <%= currentUser._id %> </dd>
-    <% } %>
-    <br>
-    <dt> Admin Panel: </dt>
-    <% if (currentUser.role === 'boardMember') { %>
-    <dd><li><a href="/minutes/new"><span>New Minutes (Board Member)</span></a></li></dd>
+<div class="dashboard">
+  <div class="userinfo well">
+    <img src="images/crest.png" alt="NZ crest" id="crest">
+    <% if (currentUser.role === 'basic') { %>
+        <h3>Your NZAA</h3>
+        <dt>Your current status:</dt><dd>Dues-paying regular member. Kai Pai!</dd>
+        <dt>Your email: </dt><dd> <%= currentUser.local.email %></dd>
+        <dt>Your (hashed) Password:</dt><dd><%= currentUser.local.password %></dd>
+        <dt>Your Author ID for official records: </dt><dd> <%= currentUser._id %> </dd>
         <% } %>
+
+        <br><br>
+        <% if (currentUser.role === 'basic') { %>
+        <href="mailto:nzaawdi@gmail.com"><button class="btn btn-success">
+        Clicks to send an email to the 'Prime Ad-minister' with any questions.
+        </button>
+        <% } %>
+
+    <% if (currentUser.role === 'boardMember') { %>
+        <h4>User details:</h4>
+        <h4>----</h4>
+        <dt>Current role: </dt><dd>You are a Board Member! Tau Toko!</dd>
+        <dt>Email: </dt><dd> <%= currentUser.local.email %></dd>
+        <dt>Password (Hashed):</dt><dd><%= currentUser.local.password %></dd>
+        <dt>Your Author ID: </dt><dd> <%= currentUser._id %> </dd>
+        <% } %>
+
+        <br>
+        <br>
+        <% if (currentUser.role === 'boardMember') { %>
+        <dt> Admin Panel: </dt>
+        <dd><li><a href="/minutes/new"><span>New Minutes (Board Member)</span></a></li></dd>
+            <% } %>
+        <br>
+
+        <!-- <form method="post" action="/">
+          <input class="btn btn-default" type="submit">
+        </form> -->
+  </div>
+
+  <!-- "Current Minutes bar" in row/wrap flexbox with user bar. Buggy! -->
+
+  <% include ../partials/freshminute %>
+
+
 </div>
 
-
     <div>
-      <h3>All Minutes:</h3>
-      <div>
+      <h3>All Minute summaries (stacked chronologically):</h3>
+      <div class="minutebox">
       <% minutes.forEach(function(minute) { %>
-        <dl class="dl-horizontal">
+        <dl class="dl-horizontal well">
           <dt>Date of</dt><dd><%= minute.dateOf %></dd>
           <dt>Type</dt><dd><%= minute.type %></dd>
           <dt>Approved</dt><dd><%= minute.approved %></dd>
@@ -43,29 +73,23 @@
 
 <br>
 
-
+<h3>PDF's of Minutes:</h3>
 <br>
 
-
-
-<!-- <iframe id="iframepdf" src="/images/Minutes-July2016.pdf" width="450" height="500"></iframe>
- -->
-
-  <iframe id="iframepdf" src="https://s3.amazonaws.com/airbridge-wdi/images/Minutes-July2016.pdf" width="450" height="500"></iframe>
-
-
-<!-- <iframe id="iframepdf" src="/images/Agenda-July2016.pdf" width="450" height="500"></iframe>
- -->
+<div class="iframebox">
+  <div>
+    <iframe id="iframepdf" src="https://s3.amazonaws.com/airbridge-wdi/images/Minutes-July2016.pdf" width="450" height="500"></iframe>
+  </div>
+  <div>
     <iframe id="iframepdf" src="https://s3.amazonaws.com/airbridge-wdi/images/Agenda-July2016.pdf
 " width="450" height="500"></iframe>
+  </div>
+</div>
 
+</main>
 
-
-
-  </main>
-
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
+<footer>
+  <% include ../partials/footer %>
+</footer>
 </body>
 </html>

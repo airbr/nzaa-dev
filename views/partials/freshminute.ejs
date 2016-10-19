@@ -1,0 +1,17 @@
+    <div class="freshminute well">
+<!-- <%= minutes.slice(-1)[0] %> -->
+         <h3> Approval status of current minutes: <%= minutes.slice(-1)[0].approved %> </h3>
+          <%= minutes.slice(-1)[0].dateOf %>
+          <br>
+          <br>
+          <u><p>These minutes were authored by:</p></u>
+          <%= minutes.slice(-1)[0].author %>
+
+          <br>
+          <br>
+          <dl class="dl-horizontal">
+          <dt>Headline</dt><dd><%= minutes.slice(-1)[0].headline %></dd>
+          <dt>Date of</dt><dd><%= minutes.slice(-1)[0].dateOf %></dd>
+          <dt>Type</dt><dd><%= minutes.slice(-1)[0].type %></dd>
+         </dl>
+    </div>

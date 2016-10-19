@@ -26,11 +26,6 @@ var app = express();
 // Use Static Content
 app.use('/static', express.static('public/images/'));
 
-
-// // Connect to database
-// mongoose.connect('mongodb://localhost/espm');
-// // mongoose.connect('mongodb://localhost/minutes');
-
 // Connect to database
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
@@ -46,8 +41,6 @@ mongoose.connection.on('error', function(err) {
 mongoose.connection.once('open', function() {
   console.log("Mongoose has connected to MongoDB!");
 });
-
-
 
 
 // view engine setup

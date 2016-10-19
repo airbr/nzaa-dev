@@ -14,3 +14,34 @@ a {
   width: 0 auto;
   overflow: hidden;
 }
+.dashboard {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.crest {
+  align-content:  center;
+}
+.userinfo {
+  overflow: scroll;
+  width: 50%;
+}
+.freshminute {
+  width: 50%;
+  background-color: teal;
+}
+.minutebox {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+.iframebox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+[class|="author"] {
+    border-style: solid;
+    border: 20px auto;
+    border-color: green;
+}

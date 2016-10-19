@@ -1,2 +1,2 @@
-#!/bin/bash
-DEBUG=todos:* npm start
+!/bin/bash
+DEBUG=nzaa:* npm start
