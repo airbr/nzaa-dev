@@ -19,6 +19,3 @@ UserSchema.methods.isValidPassword = function(password) {
 };
 
 module.exports = mongoose.model('User', UserSchema);
-
-// Starter code
-// Todos linked to embedeed document under Todo. Maybe needs change
