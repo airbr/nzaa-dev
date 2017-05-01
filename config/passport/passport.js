@@ -22,5 +22,4 @@ var passportConfig = function(passport) {
 
 module.exports = passportConfig;
 
-// Starter code
 

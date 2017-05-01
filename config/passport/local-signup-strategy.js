@@ -27,5 +27,3 @@ var strategy = new LocalStrategy({
   });
 
 module.exports = strategy;
-
-//StarterCode
