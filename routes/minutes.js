@@ -18,19 +18,12 @@ function authenticate(req, res, next) {
     next();
   }
 }
-
-// INDEX
-// router.get('/', function(req, res, next) {
-//   console.log('\n\nINDEX route for minutes has currentUser = ', currentUser);
-//   console.log('\n\nINDEX route for minutes has req.user = ', req.user);
-//   res.render('minutes/index', { minutes: minutes });
-// });
-
 // INDEX
 router.get('/', function(req, res, next) {
   var minutes = [];
 
   console.log('minutes', minutes);
+
   Minutes.find(minutes)
   .then(function(minutes) {
     res.render('minutes/index' , { minutes: minutes });
