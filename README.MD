@@ -12,15 +12,6 @@
 
 An early deployment of this project without full functionality is [online at Heroku](https://secure-waters-81035.herokuapp.com/) 
 
-
-
-
-
-
-Leaving this inspirational quote previous-me put here. You get em Morgan !
-
-> I am always open for help and suggestions, the technologies in this project in the back-end were a brave new world for me! You can find me at `@atlbridge` on Twitter.
-
 ## Screenshots
 
 Barebones front-page
